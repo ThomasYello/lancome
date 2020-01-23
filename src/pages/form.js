@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import WrappedForm from "../components/wrappedForm"
 
-class form extends React.Component {
+class Form extends React.Component {
   render() {
 
     return (
@@ -20,4 +20,4 @@ class form extends React.Component {
   }
 }
 
-export default form
+export default Form
