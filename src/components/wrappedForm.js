@@ -1,4 +1,6 @@
 import React from "react"
+import { navigate } from "gatsby"
+
 
 class wrappedForm extends React.Component {
     constructor(props) {
