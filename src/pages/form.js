@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import WrappedForm from "../components/wrappedForm"
+import wrappedForm from "../components/wrappedForm"
 
 class form extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class form extends React.Component {
         <h1> Forrmulaire </h1>
 
         <p> Veuillez remplir le formulaire ci dessous !</p>
-        <WrappedForm />
+        <wrappedForm />
 
 
       </Layout>
