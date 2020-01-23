@@ -2,7 +2,7 @@ import React from "react"
 import { navigate } from "gatsby"
 
 
-class wrappedForm extends React.Component {
+class WrappedForm extends React.Component {
   constructor(props) {
     super(props)
 
@@ -98,4 +98,4 @@ class wrappedForm extends React.Component {
   }
 }
 
-export default wrappedForm
+export default WrappedForm
