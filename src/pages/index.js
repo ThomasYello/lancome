@@ -37,7 +37,7 @@ class IndexPage extends React.Component {
         viri boni multa detrahunt detrahique patiuntur, ut iis amici potius quam ipsi fruantur.</p>
         
         
-        <Link to='form.js'> Inscription</Link>
+        <Link to='/form'> Inscription</Link>
      
      
       </Layout>
