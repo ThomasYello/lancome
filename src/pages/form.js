@@ -1,13 +1,13 @@
 import React from "react"
 
-import {Link} from 'gatsby'
+
 import Layout from "../components/layout"
 
 import SEO from "../components/seo"
 
 
 
-class IndexPage extends React.Component {
+class form extends React.Component {
 
   render() {
 
@@ -36,14 +36,10 @@ class IndexPage extends React.Component {
         insectarique vehementius, quae in nostris rebus non satis honeste, in amicorum fiunt honestissime; multaeque res sunt in quibus de suis commodis
         viri boni multa detrahunt detrahique patiuntur, ut iis amici potius quam ipsi fruantur.</p>
         
-        
-        <Link to='form.js'> Inscription</Link>
-     
-     
       </Layout>
 
     )
   }
 }
 
-export default IndexPage
+export default form
