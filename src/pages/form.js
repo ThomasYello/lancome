@@ -10,8 +10,10 @@ class form extends React.Component {
         <SEO title="ACCUEIL" />
         <h1> Forrmulaire </h1>
 
-        <p> Veuillez remplir le formulaire ci dessous</p>
-        <wrappedForm/>
+        <p> Veuillez remplir le formulaire ci dessous !</p>
+        <wrappedForm />
+
+
       </Layout>
     )
   }
