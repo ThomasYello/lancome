@@ -5,10 +5,11 @@ import wrappedForm from "../components/wrappedForm"
 
 class form extends React.Component {
   render() {
+
     return (
       <Layout>
         <SEO title="ACCUEIL" />
-        <h1> Forrmulaire </h1>
+        <h1> Formulaire </h1>
 
         <p> Veuillez remplir le formulaire ci dessous !</p>
         <wrappedForm />

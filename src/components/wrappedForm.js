@@ -2,115 +2,97 @@ import React from "react"
 import { navigate } from "gatsby"
 
 
-class wrappedForm extends React.Component {
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-          form: [],
-          nom: "",
-          prenom: "",
-          email: "",
-          checked: true,
-          password: ""
-          
-        }
-      }
+class WrappedForm extends React.Component {
+  constructor(props) {
+    super(props)
 
-      handleSubmit = event => {
-        event.preventDefault();
-          
-        const params = {
-          nom: this.state.nom,
-          prenom: this.state.prenom,
-          email: this.state.email,
-          checked: this.state.checked,
-          password: this.state.password
-    
-    
-        };
-        if (params.checked === true) {
-            
-            const { nom, prenom, email, form, password } = this.state;
-    
-            navigate("/merci",
-            {
-              state: { nom, prenom, email, form, password }
-    
-            })
-    
-        } else {
-          alert('veuillez accepter les conditions pour vous inscrire');
-        }
-    
-      }
-    
+    this.state = {
+      nom: "",
+      prenom: "",
+      email: "",
+      checked: false,
+    }
+  }
 
-      handleChange = event => {
-        event.preventDefault();
-    
-        this.setState({ [event.target.name]: event.target.value })
-    
-      }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    const { nom, prenom, email, checked } = this.state
+    if ( checked === true ) {
+      navigate("/merci", {
+        state: { nom, prenom, email },
+      })
+    } else {
+      alert("veuillez accepter les conditions pour vous inscrire")
+    }
+  }
+
+  handleChange = event => {
+    event.preventDefault()
+    this.setState({ [event.target.name]: event.target.value })
+  }
+
+  handleCheckbox = () => {
+    const check = this.state.checked
+    this.setState({ checked: !check })
+  }
 
   render() {
+
+    const { nom, prenom, email, checked } = this.state
+
     return (
-        <div className="wrapper">
-        <h1>Mon formulaire</h1>
-
+      <div className="wrapper">
         <div className="from-wrapper">
-
-          <form onSubmit={this.handleSubmit} >
-
-            <div className="Nom">
+          <form onSubmit={this.handleSubmit}>
+            <div className="input_wrapper">
               <label htmlFor="nom">Nom</label>
-              <input onChange={this.handleChange} type='text' name='nom' value={nom} />
-
+              <input
+                onChange={this.handleChange}
+                type="text"
+                name="nom"
+                value={nom}
+                required
+              />
             </div>
 
-            <div className="Prenom">
+            <div className="input_wrapper">
               <label htmlFor="prenom"> Prenom</label>
-              <input onChange={this.handleChange} type='text' name='prenom' value={prenom} />
-
+              <input
+                onChange={this.handleChange}
+                type="text"
+                name="prenom"
+                value={prenom}
+                required
+              />
             </div>
 
-            <div className="Email">
+            <div className="input_wrapper">
               <label htmlFor="email"> Email</label>
-              <input onChange={this.handleChange} type='email' name='email' value={email} />
-
-            </div>
-
-            <div className="Email">
-              <label htmlFor="password"> Mot de passe</label>
-              <input onChange={this.handleChange} type='password' name='password' value={password} />
-
+              <input
+                onChange={this.handleChange}
+                type="email"
+                name="email"
+                value={email}
+                required
+              />
             </div>
 
             <div>
-              <input type="checkbox" name="checked" onChange={this.handleCheckbox} checked={checked} />
-              <label htmlFor="checked">J'accepte les conditions du site  </label>
-              
-
+              <input
+                type="checkbox"
+                name="checked"
+                onChange={this.handleCheckbox}
+                checked={checked}
+              />
+              <label htmlFor="checked">J'accepte les conditions du site </label>
             </div>
-            
 
             <div className="bouton">
-            
               <button onSubmit={this.handleSubmit}> Valider </button>
             </div>
-
-          
           </form>
-
-
-        
-          
         </div>
-            
-         
-
-
       </div>
     )
   }
